@@ -85,15 +85,15 @@ void surikiuotiAbeceliskai(vector<Abonentas>& unikalusAbonentai){
     }
 }
 
-int pajamuSumosRadimas(vector<Abonentas> unikalusAbonentai){
-    int suma = 0;
+float pajamuSumosRadimas(vector<Abonentas> unikalusAbonentai){
+    float suma = 0;
     for(int i = 0; i<unikalusAbonentai.size(); i++){
         suma += unikalusAbonentai[i].saskaitaFaktura;
     }
     return suma;
 }
 
-void rez(int pajamuSuma, vector<Abonentas> unikalusAbonentai){
+void rez(float pajamuSuma, vector<Abonentas> unikalusAbonentai){
     ofstream rez("rez.txt");
     rez << left << setw(20) << "Vardas, Pavardė" << "Mokėti" << endl;
     rez << "-------------------------" << endl;
@@ -101,7 +101,7 @@ void rez(int pajamuSuma, vector<Abonentas> unikalusAbonentai){
         rez << left << setw(22) << unikalusAbonentai[i].vardas << right << unikalusAbonentai[i].saskaitaFaktura << endl;
     }
     rez << "-------------------------" << endl;
-    rez << right << setw(22) << "          Pajamos:" << pajamuSuma << endl;
+    rez << right << setw(22) << "          Pajamos: " << pajamuSuma << endl;
     rez.close();
 }
 
@@ -114,11 +114,7 @@ int main(){
     apskaiciuotiFaktura(abonentai, miestuKainorasciai);
     vector<Abonentas> unikalusAbonentai = atrinktiUnikaliusAbonentus(abonentai);
     surikiuotiAbeceliskai(unikalusAbonentai);
-    int pajamuSuma = pajamuSumosRadimas(unikalusAbonentai);
+    float pajamuSuma = pajamuSumosRadimas(unikalusAbonentai);
     rez(pajamuSuma, unikalusAbonentai);
-
-    for(int i = 0; i<unikalusAbonentai.size(); i++){
-        cout << unikalusAbonentai[i].vardas << " " << unikalusAbonentai[i].saskaitaFaktura << endl;
-    }
-
+    return 0;
 }
