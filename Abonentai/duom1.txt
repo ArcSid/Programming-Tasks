@@ -1,0 +1,6 @@
+5
+Pirmasis Petras      868999999 Klaipėda       12
+Antrutė Jurgita      868999999 Klaipėda       24
+Jurgutis Jurgis      888824242 Vilnius        12
+Antrutė Jurgita      758455547 Vilnius        15
+Rimutis Rimas        131231133 Raseiniai      12
